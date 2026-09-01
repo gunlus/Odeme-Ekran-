@@ -8,3 +8,26 @@
 2026-08-31 11:38:02 | UYARI | Müşteri bulunamadı(Boş T.C Kimlik Numarası girildi): TCKN=
 2026-08-31 11:38:39 | UYARI | Müşteri bulunamadı(Boş T.C Kimlik Numarası girildi): TCKN=
 2026-08-31 11:38:44 | UYARI | Müşteri bulunamadı(Boş T.C Kimlik Numarası girildi): TCKN=
+2026-09-01 13:55:21 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 13:55:21 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 14:14:17 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 14:14:17 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 14:14:55 | BİLGİ | Ekran temizlendi (hesap listesi dahil).
+2026-09-01 14:14:58 | UYARI | Müşteri bulunamadı TCKN=klfjdsklfds
+2026-09-01 14:15:05 | UYARI | Müşteri bulunamadı TCKN=klfjdsklfds
+2026-09-01 14:19:22 | BİLGİ | Muhasebe kaydı eklendi: Ödeme ID=38, Tutar=₺27.820,00, Hesap=TR202608311101
+2026-09-01 14:19:29 | BİLGİ | Ödeme başarılı: ID=38, Tutar=₺27.820,00
+2026-09-01 14:27:15 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 14:27:15 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 14:27:18 | BİLGİ | Ekran temizlendi (hesap listesi dahil).
+2026-09-01 14:27:19 | BİLGİ | Ekran temizlendi (hesap listesi dahil).
+2026-09-01 15:14:22 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 15:14:22 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 15:14:37 | BİLGİ | Muhasebe kaydı eklendi: Ödeme ID=2, Tutar=$3,493.00, Hesap=TR20260831202
+2026-09-01 15:14:38 | BİLGİ | Ödeme başarılı: ID=2, Tutar=$3,493.00
+2026-09-01 15:18:30 | BİLGİ | Muhasebe kaydı eklendi: Ödeme ID=12, Tutar=$37,354.00, Hesap=TR202608311101
+2026-09-01 15:18:31 | BİLGİ | Ödeme başarılı: ID=12, Tutar=$37,354.00
+2026-09-01 15:19:27 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 15:19:28 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 15:19:39 | BİLGİ | Muhasebe kaydı eklendi: Ödeme ID=21, Tutar=$11,520.00, Hesap=TR202608312201
+2026-09-01 15:19:40 | BİLGİ | Ödeme başarılı: ID=21, Tutar=$11,520.00

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Odeme_Projesi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+618b01da195f46e7e83b765cc97f745e23efd083")]
 [assembly: System.Reflection.AssemblyProductAttribute("Odeme_Projesi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Odeme_Projesi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

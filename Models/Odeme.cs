@@ -21,8 +21,7 @@ public class Odeme
 
     public Odeme() { }
 
-    public Odeme(int alacakliHesapId, int? borcluHesapId, decimal odemeMiktari,
-                 string odemeAciklamasi, DateTime sonOdemeTarihi)
+    public Odeme(int alacakliHesapId, int? borcluHesapId, decimal odemeMiktari,string odemeAciklamasi, DateTime sonOdemeTarihi)
     {
         AlacakliHesapId = alacakliHesapId;
         BorcluHesapId = borcluHesapId;

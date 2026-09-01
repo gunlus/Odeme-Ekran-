@@ -52,7 +52,7 @@ public class OdemeServisi
             var muhasebeKayit = new MuhasebeDefteri
             {
                 OdemeId = odeme.Id,
-                HesapId = alacakliHesap.Id,              // ✅ Hesap ID
+                HesapId = alacakliHesap.Id,
                 Tutar = odeme.OdemeMiktari,
                 BakiyeOnce = bakiyeOnce,
                 BakiyeSonra = bakiyeSonra,

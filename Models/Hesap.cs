@@ -8,11 +8,10 @@ public class Hesap{
     public string HesapNo{ get ; set;} //unique
     public decimal  KumuleAlacak{ get ; private set;}
     public decimal KumuleBorc{ get ; private set;}
-    public decimal Bakiye {get;private set;}
     public int MusteriId { get; set; } 
     public Musteri Musteri { get; set; }  
     
-    
+    public decimal Bakiye => KumuleAlacak - KumuleBorc;
 
     public Hesap() { }
    

@@ -32,19 +32,18 @@ public class BankaDbContext : DbContext
 
         // ===== HESAP =====
         modelBuilder.Entity<Hesap>(entity =>
-{
-    // ✅ Birincil anahtar artık Id
-    entity.HasKey(h => h.Id);
+        {
+            entity.HasKey(h => h.Id);
 
-    // ✅ HesapNo hala benzersiz olsun
-    entity.HasIndex(h => h.HesapNo).IsUnique();
+           
+            entity.HasIndex(h => h.HesapNo).IsUnique();
 
-    // Musteri ile ilişki
-    entity.HasOne(h => h.Musteri)
-          .WithMany(m => m.Hesaplar)
-          .HasForeignKey(h => h.MusteriId)
-          .OnDelete(DeleteBehavior.Restrict);
-});
+            // Musteri ile ilişki
+            entity.HasOne(h => h.Musteri)
+                  .WithMany(m => m.Hesaplar)
+                  .HasForeignKey(h => h.MusteriId)
+                  .OnDelete(DeleteBehavior.Restrict);
+        });
 
        // ===== ODEME =====
 modelBuilder.Entity<Odeme>(entity =>
