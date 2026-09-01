@@ -1,0 +1,15 @@
+2026-08-28 15:23:50 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-08-28 15:23:50 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-08-28 15:23:56 | UYARI | Müşteri bulunamadı: TCKN=12345678908
+2026-08-28 15:24:02 | UYARI | Müşteri bulunamadı: TCKN=12345678909
+2026-08-28 15:24:19 | UYARI | Müşteri bulunamadı: TCKN=12345678910
+2026-08-28 15:24:21 | UYARI | Müşteri bulunamadı: TCKN=12345678910
+2026-08-28 15:24:23 | UYARI | Müşteri bulunamadı: TCKN=12345678910
+2026-08-28 15:24:39 | UYARI | Müşteri bulunamadı: TCKN=12345678904
+2026-08-28 15:25:44 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-08-28 15:25:44 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-08-28 15:25:50 | UYARI | Müşteri bulunamadı: TCKN=12345678924
+2026-08-28 15:26:31 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-08-28 15:26:32 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-08-28 15:26:37 | UYARI | Müşteri bulunamadı: TCKN=12345678924
+2026-08-28 15:26:41 | UYARI | Müşteri bulunamadı(Girilen T.C Kimlik Numarası 11 haneye sahip değil): TCKN=123456789024
