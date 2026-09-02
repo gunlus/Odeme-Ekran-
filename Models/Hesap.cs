@@ -34,18 +34,15 @@ public class Hesap{
     }
 
     public bool KumuleBorcArttir(decimal miktar)
-    {
-        if (miktar <= 0)
-            throw new ArgumentException("Miktar sıfırdan büyük olmalı!");
+{
+    if (miktar <= 0)
+        throw new ArgumentException("Miktar sıfırdan büyük olmalı!");
 
-        if (Bakiye < miktar)
-            return false;  // Yetersiz bakiye
+    if (Bakiye < miktar)
+        return false;
 
-
-
-        this.KumuleBorc += miktar;
-
-        return true;
-    }
+    KumuleBorc += miktar;
+    return true;
+}
     
 }

@@ -31,3 +31,67 @@
 2026-09-01 15:19:28 | BİLGİ | Uygulama başlatma tamamlandı.
 2026-09-01 15:19:39 | BİLGİ | Muhasebe kaydı eklendi: Ödeme ID=21, Tutar=$11,520.00, Hesap=TR202608312201
 2026-09-01 15:19:40 | BİLGİ | Ödeme başarılı: ID=21, Tutar=$11,520.00
+2026-09-01 15:32:26 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 15:32:27 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 15:34:54 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 15:34:54 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 16:09:44 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 16:09:44 | BİLGİ | Veritabanında müşteri yok, veriler ekleniyor...
+2026-09-01 16:09:44 | BİLGİ | Test verileri eklendi.
+2026-09-01 16:09:44 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 16:11:03 | HATA | Ödeme hatası ID:3 - An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:11:07 | HATA | Ödeme başarısız: ID=3, Hata=Hata: An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:11:27 | HATA | Ödeme hatası ID:3 - An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:11:31 | HATA | Ödeme başarısız: ID=3, Hata=Hata: An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:11:39 | HATA | Ödeme hatası ID:3 - An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:11:45 | HATA | Ödeme başarısız: ID=3, Hata=Hata: An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:12:08 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 16:12:09 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 16:12:14 | UYARI | Müşteri bulunamadı(Girilen T.C Kimlik Numarası 11 haneye sahip değil): TCKN=1234567867
+2026-09-01 16:12:28 | HATA | Ödeme hatası ID:10 - An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:13:22 | HATA | Ödeme başarısız: ID=10, Hata=Hata: An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:15:42 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 16:15:42 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 16:16:02 | HATA | Ödeme hatası ID:43 - An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:16:03 | HATA | Ödeme başarısız: ID=43, Hata=Hata: An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:17:21 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 16:17:21 | BİLGİ | Veritabanında müşteri yok, veriler ekleniyor...
+2026-09-01 16:17:21 | BİLGİ | Test verileri eklendi.
+2026-09-01 16:17:21 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 16:17:37 | HATA | Ödeme hatası ID:24 - An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:19:09 | HATA | Ödeme başarısız: ID=24, Hata=Hata: An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:19:18 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 16:19:18 | BİLGİ | Veritabanında müşteri yok, veriler ekleniyor...
+2026-09-01 16:19:18 | BİLGİ | Test verileri eklendi.
+2026-09-01 16:19:18 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 16:20:09 | HATA | Veritabanı güncelleme hatası: SQLite Error 19: 'FOREIGN KEY constraint failed'.
+2026-09-01 16:21:12 | HATA | Ödeme başarısız: ID=1, Hata=Veritabanı hatası: SQLite Error 19: 'FOREIGN KEY constraint failed'.
+2026-09-01 16:21:16 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 16:21:16 | BİLGİ | Veritabanında müşteri yok, veriler ekleniyor...
+2026-09-01 16:21:16 | BİLGİ | Test verileri eklendi.
+2026-09-01 16:21:16 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 16:21:28 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 16:21:28 | BİLGİ | Veritabanında müşteri yok, veriler ekleniyor...
+2026-09-01 16:21:28 | BİLGİ | Test verileri eklendi.
+2026-09-01 16:21:28 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 16:21:40 | HATA | Ödeme hatası ID:21 - An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:21:43 | HATA | Ödeme başarısız: ID=21, Hata=Hata: An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:21:59 | HATA | Ödeme hatası ID:21 - An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:24:05 | HATA | Ödeme başarısız: ID=21, Hata=Hata: An error occurred while saving the entity changes. See the inner exception for details.
+2026-09-01 16:24:11 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 16:24:12 | BİLGİ | Veritabanında müşteri yok, veriler ekleniyor...
+2026-09-01 16:24:12 | BİLGİ | Test verileri eklendi.
+2026-09-01 16:24:12 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 16:24:37 | BİLGİ | Ödeme başarılı. ID=19, Tutar=$2,677.00
+2026-09-01 16:24:38 | BİLGİ | Ödeme başarılı: ID=19, Tutar=$2,677.00
+2026-09-01 16:26:24 | UYARI | Müşteri bulunamadı(Girilen T.C Kimlik Numarası 11 haneye sahip değil): TCKN=123456789566
+2026-09-01 17:20:04 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 17:20:04 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 17:48:22 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-01 17:48:22 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-01 17:48:29 | BİLGİ | Ödeme başarılı. ID=21, Tutar=₺34.729,00
+2026-09-01 17:48:30 | BİLGİ | Ödeme başarılı: ID=21, Tutar=₺34.729,00
+2026-09-02 11:02:21 | BİLGİ | Veritabanı kontrol edildi (EnsureCreated).
+2026-09-02 11:02:21 | BİLGİ | Uygulama başlatma tamamlandı.
+2026-09-02 11:02:35 | BİLGİ | Ödeme başarılı. ID=40, Tutar=₺8.927,00
+2026-09-02 11:02:36 | BİLGİ | Ödeme başarılı: ID=40, Tutar=₺8.927,00

@@ -1,10 +1,9 @@
 using System;
-using System.Data.Common;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Odeme_Projesi.Data;
 using Odeme_Projesi.Models;
-
+using System.Collections.Generic;
 namespace Odeme_Projesi.Services;
 
 public class OdemeServisi
@@ -20,12 +19,31 @@ public class OdemeServisi
 
     public (bool basarili, string mesaj) OdemeYap(int odemeId)
     {
+        using var transaction = _db.Database.BeginTransaction();
         try
         {
-            // Ödemeyi ve ilişkili verileri getir (Include ile)
+            // 1. Banka müşterisini bul veya oluştur
+            var bankaMusteri = _db.Musteriler.FirstOrDefault(m => m.TCKN == "00000000000");
+            if (bankaMusteri == null)
+            {
+                bankaMusteri = new Musteri("00000000000", "BANKA", "HESAP");
+                _db.Musteriler.Add(bankaMusteri);
+                _db.SaveChanges(); // ID atansın
+            }
+
+            // 2. Banka hesabını bul veya oluştur (MusteriId artık geçerli!)
+            var bankaHesap = _db.Hesaplar.FirstOrDefault(h => h.HesapNo == "BANKA0001");
+            if (bankaHesap == null)
+            {
+                bankaHesap = new Hesap("BANKA0001", bankaMusteri.Id, 1_000_000, 0);
+                _db.Hesaplar.Add(bankaHesap);
+                _db.SaveChanges(); // ID atansın
+            }
+
+            // 3. Ödemeyi getir (Include ile)
             var odeme = _db.Odemeler
                 .Include(o => o.AlacakliHesap)
-                    .ThenInclude(h => h.Musteri) // Müşteri bilgisine erişmek için
+                    .ThenInclude(h => h.Musteri)
                 .FirstOrDefault(o => o.Id == odemeId);
 
             if (odeme == null)
@@ -34,44 +52,82 @@ public class OdemeServisi
             if (odeme.OdemeDurumu == true)
                 return (false, "Bu ödeme zaten gerçekleştirilmiş!");
 
-            // Alacaklı hesabı kontrol et
             var alacakliHesap = odeme.AlacakliHesap;
             if (alacakliHesap == null)
                 return (false, "Alacaklı hesap bulunamadı!");
 
-            // Bakiye güncellemeleri
-            decimal bakiyeOnce = alacakliHesap.Bakiye;
+            // 4. ALACAKLI HESAP (Müşteri)
+            decimal alacakliBakiyeOnce = alacakliHesap.Bakiye;
             alacakliHesap.KumuleAlacakArttir(odeme.OdemeMiktari);
-            decimal bakiyeSonra = alacakliHesap.Bakiye;
+            decimal alacakliBakiyeSonra = alacakliHesap.Bakiye;
 
-            // Ödeme durumunu güncelle
+            // 5. BORÇLU HESAP (Banka)
+            decimal borcluBakiyeOnce = bankaHesap.Bakiye;
+            bool borcGuncellendi = bankaHesap.KumuleBorcArttir(odeme.OdemeMiktari);
+            if (!borcGuncellendi)
+                return (false, "Banka hesabında yeterli bakiye yok!");
+            decimal borcluBakiyeSonra = bankaHesap.Bakiye;
+
+            // 6. ÖDEME DURUMUNU GÜNCELLE
             odeme.OdemeDurumu = true;
             odeme.SonOdemeTarihi = DateTime.Now;
 
-            // Muhasebe Defteri'ne kayıt ekle (HesapId ile)
-            var muhasebeKayit = new MuhasebeDefteri
+            // 7. MUHASEBE KAYITLARI (Çift taraflı)
+            var alacakKayit = new MuhasebeDefteri
             {
                 OdemeId = odeme.Id,
                 HesapId = alacakliHesap.Id,
                 Tutar = odeme.OdemeMiktari,
-                BakiyeOnce = bakiyeOnce,
-                BakiyeSonra = bakiyeSonra,
+                BakiyeOnce = alacakliBakiyeOnce,
+                BakiyeSonra = alacakliBakiyeSonra,
                 Tarih = DateTime.Now,
-                IslemTipi = "ÖDEME",
-                Aciklama = odeme.OdemeAciklamasi
+                IslemTipi = "ALACAK",
+                Aciklama = odeme.OdemeAciklamasi + " (Müşteri)"
             };
+            _db.MuhasebeDefteri.Add(alacakKayit);
 
-            _db.MuhasebeDefteri.Add(muhasebeKayit);
+            var borcKayit = new MuhasebeDefteri
+            {
+                OdemeId = odeme.Id,
+                HesapId = bankaHesap.Id,
+                Tutar = odeme.OdemeMiktari,
+                BakiyeOnce = borcluBakiyeOnce,
+                BakiyeSonra = borcluBakiyeSonra,
+                Tarih = DateTime.Now,
+                IslemTipi = "BORÇ",
+                Aciklama = odeme.OdemeAciklamasi + " (Banka)"
+            };
+            _db.MuhasebeDefteri.Add(borcKayit);
+
+            // 8. TÜM DEĞİŞİKLİKLERİ KAYDET
             _db.SaveChanges();
+            transaction.Commit();
 
-            _log.Bilgi($"Muhasebe kaydı eklendi: Ödeme ID={odeme.Id}, Tutar={odeme.OdemeMiktari:C}, Hesap={alacakliHesap.HesapNo}", "OdemeYap");
-
-            return (true, $"✅ {odeme.OdemeMiktari:C} , {alacakliHesap.Musteri.TCKN} hesabına başarıyla ödendi!");
+            _log.Bilgi($"Ödeme başarılı. ID={odeme.Id}, Tutar={odeme.OdemeMiktari:C}", "OdemeYap");
+            return (true, $"✅ {odeme.OdemeMiktari:C} başarıyla ödendi!");
         }
         catch (Exception ex)
         {
+            transaction.Rollback();
             _log.Hata($"Ödeme hatası ID:{odemeId} - {ex.Message}", "OdemeYap");
             return (false, $"Hata: {ex.Message}");
         }
+    }
+    
+    // OdemeServisi.cs
+
+    public Musteri? MusteriVeHesaplariGetir(string tckn)
+    {
+        return _db.Musteriler
+            .Include(m => m.Hesaplar)
+            .FirstOrDefault(m => m.TCKN == tckn);
+    }
+
+    public List<Odeme> BekleyenOdemeleriGetir(int hesapId)
+    {
+        return _db.Odemeler
+            .Include(o => o.AlacakliHesap)
+            .Where(o => o.AlacakliHesapId == hesapId && o.OdemeDurumu == false)
+            .ToList();
     }
 }

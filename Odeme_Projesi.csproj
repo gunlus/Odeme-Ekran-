@@ -22,4 +22,12 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.11" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Components\" />
+    <Folder Include="Core\" />
+    <Folder Include="Integration\" />
+    <Folder Include="Presentation\" />
+  </ItemGroup>
 </Project>

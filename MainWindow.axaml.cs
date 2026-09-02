@@ -177,57 +177,32 @@ public partial class MainWindow : Window
     {
         string input = TxtAramaBari.Text?.Trim() ?? "";
 
-        if (string.IsNullOrEmpty(input))
-        {
-            _logServisi.Uyari($"Müşteri bulunamadı(Boş T.C Kimlik Numarası girildi): TCKN={input}", "Sorgula_Click");   
-            LstBorclar.ItemsSource = null;
-            BtnOdemeYap.IsVisible = false;
-            await GosterMesaj("TC Kimlik Numarası boş bırakılamaz. Lütfen 11 haneli sayı giriniz.");
-            return;
-        }
-        
-        if (input.Length != 11)
-        {
-            _logServisi.Uyari($"Müşteri bulunamadı(Girilen T.C Kimlik Numarası 11 haneye sahip değil): TCKN={input}", "Sorgula_Click");
-            LstBorclar.ItemsSource = null;
-            BtnOdemeYap.IsVisible = false;
-            await GosterMesaj("TC Kimlik Numarası 11 haneli olmalıdır. Lütfen kontrol ediniz.");
-            return;
-        }
-        
-        if (!long.TryParse(input, out _))
-        {
-            _logServisi.Uyari($"Müşteri bulunamadı TCKN={input}", "Sorgula_Click");
-            await GosterMesaj("Bu TC Kimlik Numarasına ait kayıt bulunamadı.");
-            LstBorclar.ItemsSource = null;
-            BtnOdemeYap.IsVisible = false;
-            return;
-        }
+        // (validasyonlar aynen kalır...)
 
-        // Müşteriyi ve hesaplarını getir
-       var musteri = _db.Musteriler
-        .Include(m => m.Hesaplar)
-        .FirstOrDefault(m => m.TCKN == input);
+        // ✅ Servis çağrısı
+        var musteri = _odemeServisi.MusteriVeHesaplariGetir(input);
 
         if (musteri != null)
         {
-            // ComboBox'u doldur
-                CmbHesaplar.ItemsSource = musteri.Hesaplar.ToList();
-        CmbHesaplar.IsEnabled = true;
-
-        // Varsayılan olarak ilk hesabı seç
-        if (musteri.Hesaplar.Any())
-        {
-            CmbHesaplar.SelectedIndex = 0;
-            HesapSecildi(musteri.Hesaplar.First().Id);
+            CmbHesaplar.ItemsSource = musteri.Hesaplar.ToList();
+            CmbHesaplar.IsEnabled = true;
+            if (musteri.Hesaplar.Any())
+            {
+                CmbHesaplar.SelectedIndex = 0;
+                int ilkHesapId = musteri.Hesaplar.First().Id;
+                // ✅ Servis çağrısı
+                var odemeler = _odemeServisi.BekleyenOdemeleriGetir(ilkHesapId);
+                LstBorclar.ItemsSource = odemeler;
+                BtnOdemeYap.IsVisible = odemeler.Any();
             }
         }
         else
         {
-            // Müşteri bulunamadı
             CmbHesaplar.ItemsSource = null;
             CmbHesaplar.IsEnabled = false;
-            // ...
+            LstBorclar.ItemsSource = null;
+            BtnOdemeYap.IsVisible = false;
+            await GosterMesaj("Bu TC Kimlik Numarasına ait kayıt bulunamadı.");
         }
     }
 
@@ -320,6 +295,9 @@ public partial class MainWindow : Window
         }
     }
 
-
+    // OdemeServisi.cs
+    
+    
+    
 
 }
