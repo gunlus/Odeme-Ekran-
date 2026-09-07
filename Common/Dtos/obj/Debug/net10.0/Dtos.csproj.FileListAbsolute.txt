@@ -5,6 +5,7 @@
 /Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/obj/Debug/net10.0/Dtos.AssemblyInfoInputs.cache
 /Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/obj/Debug/net10.0/Dtos.AssemblyInfo.cs
 /Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/obj/Debug/net10.0/Dtos.csproj.CoreCompileInputs.cache
+/Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/obj/Debug/net10.0/Dtos.sourcelink.json
 /Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/obj/Debug/net10.0/Dtos.dll
 /Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/obj/Debug/net10.0/refint/Dtos.dll
 /Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/obj/Debug/net10.0/Dtos.pdb

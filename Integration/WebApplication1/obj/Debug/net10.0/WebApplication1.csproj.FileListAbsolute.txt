@@ -56,6 +56,7 @@
 /Users/macbook/RiderProjects/Odeme_Ekranı/Integration/WebApplication1/obj/Debug/net10.0/WebApplication1.csproj.CoreCompileInputs.cache
 /Users/macbook/RiderProjects/Odeme_Ekranı/Integration/WebApplication1/obj/Debug/net10.0/WebApplication1.MvcApplicationPartsAssemblyInfo.cs
 /Users/macbook/RiderProjects/Odeme_Ekranı/Integration/WebApplication1/obj/Debug/net10.0/WebApplication1.MvcApplicationPartsAssemblyInfo.cache
+/Users/macbook/RiderProjects/Odeme_Ekranı/Integration/WebApplication1/obj/Debug/net10.0/WebApplication1.sourcelink.json
 /Users/macbook/RiderProjects/Odeme_Ekranı/Integration/WebApplication1/obj/Debug/net10.0/rjimswa.dswa.cache.json
 /Users/macbook/RiderProjects/Odeme_Ekranı/Integration/WebApplication1/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
 /Users/macbook/RiderProjects/Odeme_Ekranı/Integration/WebApplication1/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json

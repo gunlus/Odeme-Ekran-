@@ -33,39 +33,42 @@ public class TumSistemTestleri : IDisposable
     {
         _connection.Close();
     }
-
+    
     [Fact]
     public void MusteriEkle_VeritabaninaBasariylaKaydedilir()
     {
-        // Arrange: Varsayılan verilerle çakışmayacak benzersiz bir TCKN kullanıyoruz
-        using var context = new BankaDbContext(_options);
-        var musteri = new Musteri("99988877766", "Ahmet", "Yılmaz");
+        // Dinamik ve tamamen benzersiz 11 haneli TCKN üretiyoruz
+        var uniqueTckn = Math.Abs(Guid.NewGuid().GetHashCode()).ToString().PadLeft(11, '1');
+        if (uniqueTckn.Length > 11) uniqueTckn = uniqueTckn.Substring(0, 11);
 
-        // Act
+        using var context = new BankaDbContext(_options);
+        var musteri = new Musteri(uniqueTckn, "Ahmet", "Yılmaz");
+
         context.Musteriler.Add(musteri);
         context.SaveChanges();
 
-        // Assert
         using var assertContext = new BankaDbContext(_options);
-        var kaydedilenMusteri = assertContext.Musteriler.FirstOrDefault(m => m.TCKN == "99988877766");
+        var kaydedilenMusteri = assertContext.Musteriler.FirstOrDefault(m => m.TCKN == uniqueTckn);
         
         Assert.NotNull(kaydedilenMusteri);
         Assert.Equal("Ahmet", kaydedilenMusteri.Isim);
     }
 
-    // === YENİ: Kısıt (Constraint) Entegrasyon Testi ===
     [Fact]
     public void MusteriEkle_AyniTCKN_DbUpdateExceptionFirlatir()
     {
-        // Arrange: Önce özgün bir müşteri ekleyelim
+        // Ortak kullanılacak benzersiz bir TCKN oluşturuyoruz
+        var sharedTckn = Math.Abs(Guid.NewGuid().GetHashCode()).ToString().PadLeft(11, '2');
+        if (sharedTckn.Length > 11) sharedTckn = sharedTckn.Substring(0, 11);
+
         using var context1 = new BankaDbContext(_options);
-        context1.Musteriler.Add(new Musteri("88877766655", "Ali", "Can"));
+        context1.Musteriler.Add(new Musteri(sharedTckn, "Ali", "Can"));
         context1.SaveChanges();
 
-        // Act & Assert: Aynı TCKN ile tekrar kayıt eklemeye çalışıldığında hata fırlatmalıdır
         using var context2 = new BankaDbContext(_options);
-        context2.Musteriler.Add(new Musteri("88877766655", "Veli", "Can"));
+        context2.Musteriler.Add(new Musteri(sharedTckn, "Veli", "Can"));
 
+        // Aynı TCKN ile ikinci kez kayıt eklenmeye çalışıldığında hata fırlatılmalıdır
         Assert.Throws<DbUpdateException>(() => context2.SaveChanges());
     }
 
