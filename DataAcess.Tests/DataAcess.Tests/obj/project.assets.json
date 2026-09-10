@@ -1378,7 +1378,6 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Dtos": "1.0.0",
-          "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "10.0.11"
         },
         "compile": {

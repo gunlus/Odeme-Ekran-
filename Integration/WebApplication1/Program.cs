@@ -1,7 +1,7 @@
 using DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddScoped<IOdemeServisi, OdemeServisi>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

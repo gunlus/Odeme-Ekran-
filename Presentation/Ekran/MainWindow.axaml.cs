@@ -13,7 +13,7 @@ namespace Ekran;
 public partial class MainWindow : Window
 {
     private readonly HttpClient _httpClient;
-    private readonly string _apiBaseUrl = "http://localhost:5179"; // API adresim
+    private readonly string _apiBaseUrl = "http://localhost:5179"; // API adresi
 
     public MainWindow()
     {

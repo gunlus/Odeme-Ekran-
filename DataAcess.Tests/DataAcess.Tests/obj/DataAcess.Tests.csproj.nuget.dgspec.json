@@ -744,7 +744,8 @@
                 "projectPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/Dtos.csproj"
               },
               "/Users/macbook/RiderProjects/Odeme_Ekranı/Entities/Entities/Entities.csproj": {
-                "projectPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Entities/Entities/Entities.csproj"
+                "projectPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Entities/Entities/Entities.csproj",
+                "privateAssets": "all"
               }
             }
           }
