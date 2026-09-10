@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aq48Qwk4bOk=",
+  "dgSpecHash": "az2msxwwAlE=",
   "success": true,
-  "projectFilePath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Presentation/Ekran/Ekran.csproj",
+  "projectFilePath": "/Users/macbook/Desktop/Odeme_Ekranı/Presentation/Ekran/Ekran.csproj",
   "expectedPackageFiles": [
     "/Users/macbook/.nuget/packages/avalonia/12.1.1/avalonia.12.1.1.nupkg.sha512",
     "/Users/macbook/.nuget/packages/avalonia.angle.windows.natives/2.1.27548.20260419/avalonia.angle.windows.natives.2.1.27548.20260419.nupkg.sha512",

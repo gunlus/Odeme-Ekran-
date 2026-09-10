@@ -12,7 +12,9 @@
       }
     ],
     "configProperties": {
+      "Avalonia.Diagnostics.Diagnostic.IsEnabled": true,
       "MSTest.EnableParentProcessQuery": true,
+      "System.Diagnostics.Metrics.Meter.IsSupported": true,
       "System.Reflection.NullabilityInfoContext.IsSupported": true,
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false
     }

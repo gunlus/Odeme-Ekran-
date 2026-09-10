@@ -19,6 +19,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Common\Dtos\Dtos.csproj" />
-      <ProjectReference Include="..\..\Integration\WebApplication1\WebApplication1.csproj" />
+      <ProjectReference Include="..\..\Integration\Api\Api.csproj" />
     </ItemGroup>
 </Project>

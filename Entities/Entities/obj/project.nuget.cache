@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kaJzodjFnbQ=",
+  "dgSpecHash": "Zfl0QoVCHoQ=",
   "success": true,
-  "projectFilePath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Entities/Entities/Entities.csproj",
+  "projectFilePath": "/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/Entities.csproj",
   "expectedPackageFiles": [
     "/Users/macbook/.nuget/packages/microsoft.data.sqlite.core/10.0.11/microsoft.data.sqlite.core.10.0.11.nupkg.sha512",
     "/Users/macbook/.nuget/packages/microsoft.entityframeworkcore/10.0.11/microsoft.entityframeworkcore.10.0.11.nupkg.sha512",

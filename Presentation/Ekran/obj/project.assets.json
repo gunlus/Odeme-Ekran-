@@ -1189,17 +1189,7 @@
           }
         }
       },
-      "Dtos/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v10.0",
-        "compile": {
-          "bin/placeholder/Dtos.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dtos.dll": {}
-        }
-      },
-      "WebApplication1/1.0.0": {
+      "Api/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -1209,14 +1199,24 @@
           "Swashbuckle.AspNetCore": "10.2.3"
         },
         "compile": {
-          "bin/placeholder/WebApplication1.dll": {}
+          "bin/placeholder/Api.dll": {}
         },
         "runtime": {
-          "bin/placeholder/WebApplication1.dll": {}
+          "bin/placeholder/Api.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Dtos.dll": {}
+        }
       }
     }
   },
@@ -2963,26 +2963,26 @@
         "tmds.dbus.protocol.nuspec"
       ]
     },
+    "Api/1.0.0": {
+      "type": "project",
+      "path": "../../Integration/Api/Api.csproj",
+      "msbuildProject": "../../Integration/Api/Api.csproj"
+    },
     "Dtos/1.0.0": {
       "type": "project",
       "path": "../../Common/Dtos/Dtos.csproj",
       "msbuildProject": "../../Common/Dtos/Dtos.csproj"
-    },
-    "WebApplication1/1.0.0": {
-      "type": "project",
-      "path": "../../Integration/WebApplication1/WebApplication1.csproj",
-      "msbuildProject": "../../Integration/WebApplication1/WebApplication1.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "Api >= 1.0.0",
       "Avalonia >= 12.1.1",
       "Avalonia.Desktop >= 12.1.1",
       "Avalonia.Fonts.Inter >= 12.1.1",
       "Avalonia.Themes.Fluent >= 12.1.1",
       "AvaloniaUI.DiagnosticsSupport >= 2.2.3",
-      "Dtos >= 1.0.0",
-      "WebApplication1 >= 1.0.0"
+      "Dtos >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2991,11 +2991,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macbook/RiderProjects/Odeme_Ekranı/Presentation/Ekran/Ekran.csproj",
+      "projectUniqueName": "/Users/macbook/Desktop/Odeme_Ekranı/Presentation/Ekran/Ekran.csproj",
       "projectName": "Ekran",
-      "projectPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Presentation/Ekran/Ekran.csproj",
+      "projectPath": "/Users/macbook/Desktop/Odeme_Ekranı/Presentation/Ekran/Ekran.csproj",
       "packagesPath": "/Users/macbook/.nuget/packages/",
-      "outputPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Presentation/Ekran/obj/",
+      "outputPath": "/Users/macbook/Desktop/Odeme_Ekranı/Presentation/Ekran/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/macbook/.nuget/NuGet/NuGet.Config"
@@ -3012,11 +3012,11 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "/Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/Dtos.csproj": {
-              "projectPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/Dtos.csproj"
+            "/Users/macbook/Desktop/Odeme_Ekranı/Common/Dtos/Dtos.csproj": {
+              "projectPath": "/Users/macbook/Desktop/Odeme_Ekranı/Common/Dtos/Dtos.csproj"
             },
-            "/Users/macbook/RiderProjects/Odeme_Ekranı/Integration/WebApplication1/WebApplication1.csproj": {
-              "projectPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Integration/WebApplication1/WebApplication1.csproj"
+            "/Users/macbook/Desktop/Odeme_Ekranı/Integration/Api/Api.csproj": {
+              "projectPath": "/Users/macbook/Desktop/Odeme_Ekranı/Integration/Api/Api.csproj"
             }
           }
         }

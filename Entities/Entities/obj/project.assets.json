@@ -1004,11 +1004,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macbook/RiderProjects/Odeme_Ekranı/Entities/Entities/Entities.csproj",
+      "projectUniqueName": "/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Entities/Entities/Entities.csproj",
+      "projectPath": "/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/Entities.csproj",
       "packagesPath": "/Users/macbook/.nuget/packages/",
-      "outputPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Entities/Entities/obj/",
+      "outputPath": "/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/macbook/.nuget/NuGet/NuGet.Config"

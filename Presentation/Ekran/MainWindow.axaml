@@ -26,12 +26,11 @@
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Center"/>
 
-        <!-- ARAMA VE HATA MESAJI ALANI (TEK VE DOĞRU YERDE) -->
+        <!-- ARAMA VE HATA MESAJI ALANI -->
         <StackPanel Grid.Row="2" 
                     Orientation="Vertical"
                     HorizontalAlignment="Center">
             
-            <!-- Hata / Bilgi Metni (Sol hizalı) -->
             <TextBlock x:Name="TxtHataMesaji"
                        Foreground="#E74C3C"
                        FontSize="13"
@@ -91,7 +90,8 @@
                       SelectionChanged="CmbHesaplar_SelectionChanged"
                       IsEnabled="False">
                 <ComboBox.ItemTemplate>
-                    <DataTemplate DataType="models:HesapDTO">
+                    <!-- HATA BURADAYDI: DataType yerine x:DataType kullanıldı -->
+                    <DataTemplate x:DataType="models:HesapDTO">
                         <TextBlock Text="{Binding HesapNo}" />
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
@@ -143,7 +143,8 @@
                     </Style>
                 </ListBox.Styles>
                 <ListBox.ItemTemplate>
-                    <DataTemplate DataType="models:OdemeDTO">
+                    <!-- HATA BURADAYDI: DataType yerine x:DataType kullanıldı -->
+                    <DataTemplate x:DataType="models:OdemeDTO">
                         <Border BorderBrush="#E0E0E0" 
                                 BorderThickness="0,0,0,1" 
                                 Padding="10,8">

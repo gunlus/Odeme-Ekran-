@@ -22,9 +22,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Entities\DataAccess\DataAccess.csproj" />
+      <ProjectReference Include="..\..\Business\Business\Business.csproj" />
+      <ProjectReference Include="..\..\Common\Dtos\Dtos.csproj" />
       <ProjectReference Include="..\..\Entities\Entities\Entities.csproj" />
-      <ProjectReference Include="..\..\Integration\WebApplication1\WebApplication1.csproj" />
+      <ProjectReference Include="..\..\Integration\Api\Api.csproj" />
+      <ProjectReference Include="..\..\Presentation\Ekran\Ekran.csproj" />
     </ItemGroup>
 
 </Project>

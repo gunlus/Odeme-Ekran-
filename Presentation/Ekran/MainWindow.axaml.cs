@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using Dtos;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace Ekran;
 
 public partial class MainWindow : Window
 {
     private readonly HttpClient _httpClient;
-    private readonly string _apiBaseUrl = "http://localhost:5179"; // API adresi
+    private readonly string _apiBaseUrl = "http://localhost:5179"; 
 
     public MainWindow()
     {
@@ -36,12 +37,29 @@ public partial class MainWindow : Window
         try
         {
             var response = await _httpClient.PostAsync($"api/Odeme/{seciliOdeme.Id}", null);
-            string mesaj = await response.Content.ReadAsStringAsync();
+            
+            // API'den dönen JSON'ı okuyup mesajı çıkarıyoruz
+            string jsonString = await response.Content.ReadAsStringAsync();
+            string mesaj = "İşlem tamamlandı.";
+
+            using (JsonDocument doc = JsonDocument.Parse(jsonString))
+            {
+                if (doc.RootElement.TryGetProperty("mesaj", out var mesajProp))
+                    mesaj = mesajProp.GetString() ?? mesaj;
+                else if (doc.RootElement.TryGetProperty("hata", out var hataProp))
+                    mesaj = hataProp.GetString() ?? mesaj;
+            }
 
             if (response.IsSuccessStatusCode)
             {
                 GosterMesaj($"✅ Başarılı: {mesaj}", true);
-                Sorgula_Click(this, new RoutedEventArgs()); 
+                
+                
+                if (CmbHesaplar.SelectedItem is HesapDTO)
+                {
+                    await SeciliHesabinOdemeleriniYenile();
+                    
+                }
             }
             else
             {
@@ -85,28 +103,25 @@ public partial class MainWindow : Window
     {
         string input = TxtAramaBari.Text?.Trim() ?? "";
 
-        // 1. Boşluk Kontrolü
         if (string.IsNullOrEmpty(input))
         {
             GosterMesaj("❌ TC Kimlik Numarası boş bırakılamaz.");
             return;
         }
 
-        // 2. Sıfır ile Başlama Kontrolü
         if (input.StartsWith("0"))
         {
             GosterMesaj("❌ TC Kimlik Numarası 0 ile başlayamaz.");
             return;
         }
 
-        // 3. Uzunluk Kontrolü (11 Hane Zorunluluğu)
         if (input.Length != 11)
         {
             GosterMesaj("❌ TC Kimlik Numarası tam olarak 11 haneli olmalıdır.");
             return;
         }
 
-        // 🧹 YENİ ARAMA BAŞLARKEN ESKİ KALINTILARI TEMİZLE
+        // Temizlik
         CmbHesaplar.ItemsSource = null;
         CmbHesaplar.IsEnabled = false;
         CmbHesaplar.SelectedItem = null;
@@ -118,7 +133,6 @@ public partial class MainWindow : Window
         {
             var response = await _httpClient.GetAsync($"api/Musteri/{input}");
 
-            // Eğer müşteri bulunamazsa (404 Not Found)
             if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
                 GosterMesaj("Müşteri bulunamadı.");
@@ -131,20 +145,12 @@ public partial class MainWindow : Window
 
             if (musteri != null)
             {
-                CmbHesaplar.ItemsSource = musteri.Hesaplar;
-                CmbHesaplar.IsEnabled = true;
-
-                if (musteri.Hesaplar.Any())
+                if (musteri.Hesaplar != null && musteri.Hesaplar.Any())
                 {
-                    CmbHesaplar.SelectedIndex = 0;
-                    int ilkHesapId = musteri.Hesaplar.First().Id;
-
-                    var odemeler = await _httpClient.GetFromJsonAsync<List<OdemeDTO>>($"api/Hesap/bekleyen-odemeler/{ilkHesapId}")
-                                   ?? new List<OdemeDTO>();
-
-                    LstBorclar.ItemsSource = odemeler;
-                    PnlListeAlani.IsVisible = true;
-                    BtnOdemeYap.IsVisible = odemeler.Any();
+                    CmbHesaplar.ItemsSource = musteri.Hesaplar;
+                    CmbHesaplar.IsEnabled = true;
+                    // SelectedIndex = 0 yapılınca CmbHesaplar_SelectionChanged otomatik tetiklenir
+                    CmbHesaplar.SelectedIndex = 0; 
                 }
                 else
                 {
@@ -194,7 +200,27 @@ public partial class MainWindow : Window
     // ==============================
     // HESAP SEÇİMİ DEĞİŞTİĞİNDE
     // ==============================
-    public async void CmbHesaplar_SelectionChanged(object sender, Avalonia.Controls.SelectionChangedEventArgs e)
+    public async void CmbHesaplar_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
+    {
+        await SeciliHesabinOdemeleriniYenile();
+    }
+
+    // ==============================
+    // LİSTE SEÇİMİ DEĞİŞTİĞİNDE
+    // ==============================
+    public void LstBorclar_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
+    {
+        if (LstBorclar.SelectedItem is OdemeDTO seciliOdeme)
+        {
+            Console.WriteLine($"Seçilen ödeme ID: {seciliOdeme.Id}");
+        }
+        else
+        {
+            Console.WriteLine("Seçili öğe yok veya geçersiz tip.");
+        }
+    }
+    
+    private async Task SeciliHesabinOdemeleriniYenile()
     {
         if (CmbHesaplar.SelectedItem is HesapDTO seciliHesap)
         {
@@ -216,21 +242,6 @@ public partial class MainWindow : Window
             {
                 GosterMesaj($"❌ API Hatası: {ex.Message}");
             }
-        }
-    }
-
-    // ==============================
-    // LİSTE SEÇİMİ DEĞİŞTİĞİNDE
-    // ==============================
-    public void LstBorclar_SelectionChanged(object sender, Avalonia.Controls.SelectionChangedEventArgs e)
-    {
-        if (LstBorclar.SelectedItem is OdemeDTO seciliOdeme)
-        {
-            Console.WriteLine($"Seçilen ödeme ID: {seciliOdeme.Id}");
-        }
-        else
-        {
-            Console.WriteLine("Seçili öğe yok veya geçersiz tip.");
         }
     }
 }

@@ -11,3 +11,16 @@
 /Users/macbook/RiderProjects/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/refint/Entities.dll
 /Users/macbook/RiderProjects/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/Entities.pdb
 /Users/macbook/RiderProjects/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/ref/Entities.dll
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/bin/Debug/net10.0/Entities.deps.json
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/bin/Debug/net10.0/Entities.dll
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/bin/Debug/net10.0/Entities.pdb
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/Entities.csproj.AssemblyReference.cache
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/Entities.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/Entities.AssemblyInfoInputs.cache
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/Entities.AssemblyInfo.cs
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/Entities.csproj.CoreCompileInputs.cache
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/Entities.sourcelink.json
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/Entities.dll
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/refint/Entities.dll
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/Entities.pdb
+/Users/macbook/Desktop/Odeme_Ekranı/Entities/Entities/obj/Debug/net10.0/ref/Entities.dll

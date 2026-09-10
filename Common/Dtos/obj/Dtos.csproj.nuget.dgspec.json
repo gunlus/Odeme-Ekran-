@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/Dtos.csproj": {}
+    "/Users/macbook/Desktop/Odeme_Ekranı/Common/Dtos/Dtos.csproj": {}
   },
   "projects": {
-    "/Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/Dtos.csproj": {
+    "/Users/macbook/Desktop/Odeme_Ekranı/Common/Dtos/Dtos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/Dtos.csproj",
+        "projectUniqueName": "/Users/macbook/Desktop/Odeme_Ekranı/Common/Dtos/Dtos.csproj",
         "projectName": "Dtos",
-        "projectPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/Dtos.csproj",
+        "projectPath": "/Users/macbook/Desktop/Odeme_Ekranı/Common/Dtos/Dtos.csproj",
         "packagesPath": "/Users/macbook/.nuget/packages/",
-        "outputPath": "/Users/macbook/RiderProjects/Odeme_Ekranı/Common/Dtos/obj/",
+        "outputPath": "/Users/macbook/Desktop/Odeme_Ekranı/Common/Dtos/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/macbook/.nuget/NuGet/NuGet.Config"

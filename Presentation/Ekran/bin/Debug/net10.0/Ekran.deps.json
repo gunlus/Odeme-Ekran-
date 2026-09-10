@@ -8,13 +8,13 @@
     ".NETCoreApp,Version=v10.0": {
       "Ekran/1.0.0": {
         "dependencies": {
+          "Api": "1.0.0",
           "Avalonia": "12.1.1",
           "Avalonia.Desktop": "12.1.1",
           "Avalonia.Fonts.Inter": "12.1.1",
           "Avalonia.Themes.Fluent": "12.1.1",
           "AvaloniaUI.DiagnosticsSupport": "2.2.3",
-          "Dtos": "1.0.0",
-          "WebApplication1": "1.0.0"
+          "Dtos": "1.0.0"
         },
         "runtime": {
           "Ekran.dll": {}
@@ -781,6 +781,20 @@
           }
         }
       },
+      "Api/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": "10.0.11",
+          "Microsoft.EntityFrameworkCore": "10.0.11",
+          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.11",
+          "Swashbuckle.AspNetCore": "10.2.3"
+        },
+        "runtime": {
+          "Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Dtos/1.0.0": {
         "runtime": {
           "Dtos.dll": {
@@ -789,15 +803,9 @@
           }
         }
       },
-      "WebApplication1/1.0.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.OpenApi": "10.0.11",
-          "Microsoft.EntityFrameworkCore": "10.0.11",
-          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.11",
-          "Swashbuckle.AspNetCore": "10.2.3"
-        },
+      "Business/1.0.0.0": {
         "runtime": {
-          "WebApplication1.dll": {
+          "Business.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1121,13 +1129,18 @@
       "path": "tmds.dbus.protocol/0.94.1",
       "hashPath": "tmds.dbus.protocol.0.94.1.nupkg.sha512"
     },
+    "Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Dtos/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "WebApplication1/1.0.0": {
-      "type": "project",
+    "Business/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
