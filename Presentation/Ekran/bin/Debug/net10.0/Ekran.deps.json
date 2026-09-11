@@ -783,6 +783,7 @@
       },
       "Api/1.0.0": {
         "dependencies": {
+          "Business": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.11",
           "Microsoft.EntityFrameworkCore": "10.0.11",
           "Microsoft.EntityFrameworkCore.Sqlite": "10.0.11",
@@ -790,6 +791,32 @@
         },
         "runtime": {
           "Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Business/1.0.0": {
+        "dependencies": {
+          "DataAccess": "1.0.0",
+          "Dtos": "1.0.0",
+          "Entities": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "10.0.11"
+        },
+        "runtime": {
+          "Business.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "DataAccess/1.0.0": {
+        "dependencies": {
+          "Dtos": "1.0.0",
+          "Entities": "1.0.0"
+        },
+        "runtime": {
+          "DataAccess.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -803,23 +830,11 @@
           }
         }
       },
-      "Business/1.0.0.0": {
-        "runtime": {
-          "Business.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "DataAccess/1.0.0.0": {
-        "runtime": {
-          "DataAccess.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Entities/1.0.0.0": {
+      "Entities/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.11",
+          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.11"
+        },
         "runtime": {
           "Entities.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -1134,23 +1149,23 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Dtos/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Business/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DataAccess/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Entities/1.0.0.0": {
-      "type": "reference",
+    "Entities/1.0.0": {
+      "type": "project",
       "serviceable": false,
       "sha512": ""
     }

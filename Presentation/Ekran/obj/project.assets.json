@@ -1193,6 +1193,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "Business": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.11",
           "Microsoft.EntityFrameworkCore": "10.0.11",
           "Microsoft.EntityFrameworkCore.Sqlite": "10.0.11",
@@ -1208,6 +1209,36 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "DataAccess": "1.0.0",
+          "Dtos": "1.0.0",
+          "Entities": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "10.0.11"
+        },
+        "compile": {
+          "bin/placeholder/Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Business.dll": {}
+        }
+      },
+      "DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Dtos": "1.0.0",
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.dll": {}
+        }
+      },
       "Dtos/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -1216,6 +1247,20 @@
         },
         "runtime": {
           "bin/placeholder/Dtos.dll": {}
+        }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.11",
+          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.11"
+        },
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
         }
       }
     }
@@ -2968,10 +3013,25 @@
       "path": "../../Integration/Api/Api.csproj",
       "msbuildProject": "../../Integration/Api/Api.csproj"
     },
+    "Business/1.0.0": {
+      "type": "project",
+      "path": "../../Business/Business/Business.csproj",
+      "msbuildProject": "../../Business/Business/Business.csproj"
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../../DataAcess/DataAccess/DataAccess.csproj",
+      "msbuildProject": "../../DataAcess/DataAccess/DataAccess.csproj"
+    },
     "Dtos/1.0.0": {
       "type": "project",
       "path": "../../Common/Dtos/Dtos.csproj",
       "msbuildProject": "../../Common/Dtos/Dtos.csproj"
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../../Entities/Entities/Entities.csproj",
+      "msbuildProject": "../../Entities/Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {

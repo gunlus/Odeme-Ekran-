@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ekran")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+695f1986877d60ccc23a0975c5c4251e5de1bfc0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64a53b5919ad25f9a40cbd118888a46e0215ea33")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ekran")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ekran")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

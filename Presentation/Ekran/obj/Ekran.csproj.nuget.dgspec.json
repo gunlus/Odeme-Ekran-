@@ -1406,8 +1406,7 @@
             "targetAlias": "net10.0",
             "projectReferences": {
               "/Users/macbook/Desktop/Odeme_Ekranı/Business/Business/Business.csproj": {
-                "projectPath": "/Users/macbook/Desktop/Odeme_Ekranı/Business/Business/Business.csproj",
-                "privateAssets": "all"
+                "projectPath": "/Users/macbook/Desktop/Odeme_Ekranı/Business/Business/Business.csproj"
               }
             }
           }
